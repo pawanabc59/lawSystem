@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>home</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="icon" type="image/png" href="/images/logo.png" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+	<style type="text/css">
+		html {
+  			scroll-behavior: smooth;
+		}
+
+		* {
+  			box-sizing: border-box;
+  			margin:0;
+  			padding: 0;
+		}
+
+		#navbar{
+			background-color: rgba(0,0,0,0.5); 
+			top: 0;
+			position: fixed; 
+			width: 100%; 
+			top: 0; 
+			z-index: 999;
+			/*border-bottom: 1px solid black;*/
+		}
+
+		/* #navbar:hover{
+			background-color: rgb(0,0,0);
+		} */
+
+		h2, ul>li>a, ul>li>p{
+			color: white;
+		}
+
+		.nav-item{
+			margin-right: 1vh;
+		}
+
+		button[type="submit"],button[type="button"]{
+			padding: 1.5vh 3vh;
+			border-radius: 50px;
+		}
+
+		input[type="text"],input[type="email"],input[type="password"],input[type="tel"],input[type="number"],input[type="time"]{
+			padding: 1vh;
+			padding-left: 2vh;
+			border-radius: 50px;
+		}
+	</style>
+
+</head>
+<body>
+	
+	<div>
+		
+		<div style="top: 0; width: 100%;font-size: 18px;">
+			<nav class="navbar navbar-expand-sm" id="navbar" onscroll="">
+
+				<a href="#" class="navbar-brand"><img src="/images/logo.png" alt="law_system" width="50" height="50"><span style="font-size:30px;color: white; font-weight: bold;">Law System</span></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+			<div class="collapse navbar-collapse d-flex justify-content-end" id="collapsibleNavbar">
+			
+				<ul class="navbar-nav"> 
+					<li class="nav-item">
+						<a href="/home" class="nav-link"><i class='fa fa-home' style='font-size:20px; margin-right:0.5vh;'></i>Home</a>
+					</li>
+
+					<li class="nav-item">
+						<a href="/laws" class="nav-link"><i class='fa fa-address-book' style='font-size:20px; margin-right:0.5vh;'></i>Laws</a>
+					</li>
+
+					<li class="nav-item">
+						<a href="/lawyer" class="nav-link"><i class='fa fa-user-circle-o' style='font-size:20px; margin-right:0.5vh;'></i>Lawyers</a>
+					</li>
+
+					<% if(roles == "lawyer") {%>
+					<li class="nav-item">
+						<a href="/lawyer/myCase" class="nav-link"><i class="fa fa-calendar-check-o" style="font-size:20px; margin-right:0.5vh;"></i>My Case</a>
+					</li>
+					<li class="nav-item">
+						<a href="/lawyer/notification" class="nav-link"><i class="fa fa-bell" style="font-size:20px; margin-right:0.5vh;"></i>Notification</a>
+					</li>
+					<li class="nav-item">
+						<a href="/lawyer/profile" class="nav-link"><i class="fas fa-arrow-alt-circle-up" style="font-size:20px; margin-right:0.5vh;"></i>Update Profile</a>
+					</li>
+					<% } %>
+
+					<% if(!(roles == "user" || roles == "lawyer")) {%>
+					<li class="nav-item">
+						<p data-toggle="modal" data-target="#signUp" onmouseover="this.style.color='blue'" onmouseleave="this.style.color='white'" style="margin-top:1.1vh; cursor:pointer;"><i class="fa fa-user-plus" style="font-size:20px; margin-right:0.5vh;"></i>Register</p>
+
+						<div id="signUp" class="modal fade" role="dialog" style="z-index:999999;" data-backdrop="false">
+							<div class="modal-dialog">
+
+							    <div class="modal-content">
+							    	<div class="modal-header">
+							    		<h4 class="modal-title">Registration form</h4>
+							        	<button type="button" class="close" data-dismiss="modal">&times;</button>
+							    	</div>
+							    	<div class="modal-body">
+							        	<a href="#" class="nav-link" data-toggle="modal" data-target="#user"><i class="fa fa-users" style='font-size:20px; margin-right:2vh;'></i>User</a>
+							        	<a href="/lawyer/register" class="nav-link" data-toggle="modal" data-target="#lawyer"><i class="fa fa-user" style="font-size:20px; margin-right:2vh;"></i>Lawyer</a>
+							        	
+							    	</div>
+							    	<div class="modal-footer">
+							        	<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+							    	</div>
+							    </div>
+
+							</div>
+						</div>
+					</li>
+					<% } %>
+
+					<% if(roles == "user" || roles == "lawyer"){ %>
+					<li class="nav-item">
+						<a href="/logout" class="nav-link"><i class="fa fa-sign-out" style="font-size:20px; margin-right:0.5vh;"></i>Logout</a>
+					</li>
+					<% }else{ %>
+					<li class="nav-item">
+						<a href="/login" class="nav-link"><i class="fas fa-user-tie" style="font-size:20px; margin-right:1vh;"></i>Login</a>
+					</li>
+					<% } %>
+
+				</ul>
+			</div>
+			</nav>
+		</div>
+
+		<!-- The Modal for car owner-->
+			<div class="modal" id="user">
+			  <div class="modal-dialog">
+			    <div class="modal-content">
+
+			      <!-- Modal Header -->
+			      <div class="modal-header">
+			        <h4 class="modal-title">User Registration</h4>
+			        <button type="button" class="close" data-dismiss="modal">&times;</button>
+			      </div>
+
+			      <!-- Modal body -->
+			      <form action="/user/register" method="POST">
+				      <div class="modal-body">
+				    			
+				      			<div class="form-group">
+									<label for="fname">First Name</label>
+								    <input type="text" class="form-control" id="fname" name="fname" placeholder="Please Enter your first name" required>
+								</div>
+								<div class="form-group">
+									<label for="lname">Last Name</label>
+								    <input type="text" class="form-control" id="lname" name="lname" placeholder="Please Enter your last name" required>
+								</div>
+								<div class="form-group">
+									<label for="contactNo">Contact Number:</label>
+								    <input type="tel" class="form-control" id="contactNo" name="contactNo" placeholder="Please Enter your contact number" required>
+								</div>
+								<div class="form-group">
+									<label for="email">Email address:</label>
+								    <input type="email" class="form-control" id="email" name="email" placeholder="Please Enter your Email" required>
+								</div>
+								<div class="form-group">
+								    <label for="password">Password:</label>
+								    <input type="password" class="form-control" id="password" name="password" placeholder="Please Enter your password" required>
+								</div>
+								
+				      </div>
+
+				      <!-- Modal footer -->
+				      <div class="modal-footer">
+				      <button type="submit" class="btn btn-success">Register</button>
+				        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				      </div>
+			      </form>
+
+			    </div>
+			  </div>
+			</div>
+
+			<!-- The Modal for place Owner-->
+			<div class="modal" id="lawyer">
+			  <div class="modal-dialog">
+			    <div class="modal-content">
+
+			      <!-- Modal Header -->
+			      <div class="modal-header">
+			        <h4 class="modal-title">Lawyer Registration</h4>
+			        <button type="button" class="close" data-dismiss="modal">&times;</button>
+			      </div>
+
+			      <!-- Modal body -->
+			      <form action="/lawyer/register" method="POST">
+				      <div class="modal-body">
+				    			
+				    			<div class="form-group">
+									<label for="fname">First Name</label>
+								    <input type="text" class="form-control" id="pfname" name="fname" placeholder="Please Enter your first name" required>
+								</div>
+								<div class="form-group">
+									<label for="lname">Last Name</label>
+								    <input type="text" class="form-control" id="plname" name="lname" placeholder="Please Enter your last name" required>
+								</div>
+								<div class="form-group">
+									<label for="contactNo">Contact Number:</label>
+								    <input type="tel" class="form-control" id="pcontactNo" name="contactNo" placeholder="Please Enter your contact number" required>
+								</div>
+								<div class="form-group">
+									<label for="email">Email address:</label>
+								    <input type="email" class="form-control" id="pemail" name="email" placeholder="Please Enter your Email" required>
+								</div>
+								<div class="form-group">
+								    <label for="password">Password:</label>
+								    <input type="password" class="form-control" id="ppassword" name="password" placeholder="Please Enter your password" required>
+								</div>
+								
+				      </div>
+
+				      <!-- Modal footer -->
+				      <div class="modal-footer">
+				      <button type="submit" class="btn btn-success">Register</button>
+				        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				      </div>
+			      </form>
+
+			    </div>
+			  </div>
+			</div>
+
+	</div>
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+		  $(window).scroll(function(){
+		  	var scroll = $(window).scrollTop();
+			  if (scroll > 10) {
+			    $("#navbar").css("background" , "gray");
+			  }
+
+			  else{
+				  $("#navbar").css("background" , "");  	
+			  }
+		  })
+		})
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Notifications</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <style type="text/css">
+    .container{
+      margin-top: 15vh;
+    }
+
+    .card{
+      margin-top: 2vh;
+      margin-bottom: 2vh
+    }
+  </style>
+</head>
+<body>
+
+<div>
+    <% include navbar.ejs ;%>
+</div>
+
+<div class="container">
+        <h4 style="margin-top: 14vh; color: black;">Search Laws</h4>
+        <input class="form-control" id="myInput" type="text" placeholder="Search.." style=" margin-bottom: 4vh;">
+        <div id="searchEvents" class="mt-3">
+  <div>
+    <div id="accordion">
+
+    <div class="card">
+      <div class="card-header">
+        <a class="card-link" data-toggle="collapse" href="#collapseOne">
+          120b Criminal Conspiracy to commit an offence 
+        </a>
+      </div>
+      <div id="collapseOne" class="collapse show" data-parent="#accordion">
+        <div class="card-body">
+          Description:Conspiracy (criminal) In criminal law, a conspiracy is an agreement between two or more persons to commit a crime at some time in the future. 
+Criminal law in some countries or for some conspiracies may require that at least one overt act be undertaken in furtherance of that agreement, to constitute an offense.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+          124A Sedition
+        </a>
+      </div>
+      <div id="collapseTwo" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          description:Whoever, by words, either spoken or written, or by signs, or by visible representation, or otherwise, brings or attempts to bring into hatred or contempt, or excites or attempts to excite disaffection towards, the Government estab­lished by law in 103 [India], shall be punished with 104 [im­prisonment for life], to which fine may be added, or with impris­onment which may extend to three years, to which fine may be added, or with fine.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+          143 A member of unlawful assembly
+        </a>
+      </div>
+      <div id="collapseThree" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          Description:If an offence is committed by any member of an unlawful assembly in prosecution of the common object of that assembly, or such as the members of that assembly knew to be likely to be committed in prosecution of that object, every person who, at the time of the committing of that offence, is a member of the same assembly, is guilty of that offence..
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#Rioting">
+          148 Rioting with deadly weapons
+        </a>
+      </div>
+      <div id="Rioting" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <strong> Description: </strong>Whoever is guilty of rioting, being armed with a deadly weapon or with anything which, used as a weapon of offence, is likely to cause death, shall be punished with imprisonment of either description for a term which may extend to three years, or with fine, or with both.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#bribery">
+          171E punishment for bribery
+        </a>
+      </div>
+      <div id="bribery" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <strong> Description: </strong>Whoever commits the offence of bribery shall be punished with imprisonment of either description for a term which may extend to one year, or with fine, or with both.
+Provided that bribery by treating shall be punished with fine only. 
+Explanation.-Treating means that form of bribery where the gratification consists in food, drink, entertainment, or provision.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#Counterfeiting">
+          255 Counterfeiting a government stamp
+        </a>
+      </div>
+      <div id="Counterfeiting" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <strong> Description: </strong>Whoever counterfeits, or knowingly performs any part of the process of counterfeiting, any stamp issued by Government for the purpose of revenue, shall be punished with 104[imprisonment for life], or with imprisonment of either description for a term which may extend to ten years, and shall also be liable to fine.
+
+Explanation- A person commits this offence who counterfeits by causing a genuine stamp of one denomination to appear like a genuine stamp of a different denomination.
+
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#murder">
+          302 murder
+        </a>
+      </div>
+      <div id="murder" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <strong> Description: </strong>Whoever commits murder shall be punished with death, or 2[ imprisonment] for life, and shall also be liable to fine.
+
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#Homicide">
+          304 Culpable Homicide
+        </a>
+      </div>
+      <div id="Homicide" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <strong> Description: </strong>Whoever commits culpable homicide not amounting to murder shall be punished with 1[imprisonment for life], or imprisonment of either description for a term which may extend to ten years, and shall also be liable to fine, if the act by which the death is caused is done with the intention of causing death, or of causing such bodily injury as is likely to cause death, or with imprisonment of either description for a term which may extend to ten years, or with fine, or with both, if the act is done with the knowledge that it is likely to cause death, but without any intention to cause death, or to cause such bodily injury as is likely to cause death.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#negligent">
+          304A Causing death by rash or negligent act
+        </a>
+      </div>
+      <div id="negligent" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <strong> Description: </strong>Whoever causes the death of any person by doing any rash or negligent act not amounting to culpable homicide shall be punished with imprisonment of either description for a term which may extend to two years, or with fine, or with both.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#Dowry">
+          304B Dowry Death
+        </a>
+      </div>
+      <div id="Dowry" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <strong> Description: </strong>Where the death of a woman is caused by any burns or bodily injury or occurs otherwise than under normal circumstances within seven years of her marriage and it is shown that soon before her death she was subjected to cruelty or har­assment by her husband or any relative of her husband for, or in connection with, any demand for dowry, such death shall be called dowry death, and such husband or relative shall be deemed to have caused her death.
+Explanation.For the purpose of this sub-section, dowry shall have the same meaning as in section 2 of the Dowry Prohibition Act, 1961 (28 of 1961).
+Whoever commits dowry death shall be punished with imprison­ment for a term which shall not be less than seven years but which may extend to imprisonment for life.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#Attempt">
+          307 Attempt to murder
+        </a>
+      </div>
+      <div id="Attempt" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <strong> Description: </strong>Whoever does any act with such intention or knowledge, and under such circumstances that, if he by that act caused death, he would be guilty of murder, shall be punished with imprisonment of either description for a term which may extend to ten years, and shall also be liable to fine; and if hurt is caused to any person by such act, the offender shall be liable either to 1[imprisonment for life], or to such punishment as is hereinbefore mentioned. Attempts by life convicts.
+2[When any person offending under this section is under sentence of [imprisonment for life], he may, if hurt is caused, be punished with death.]
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#culpable">
+          308 Attempt to commit culpable homicide
+        </a>
+      </div>
+      <div id="culpable" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <strong> Description: </strong>Whoever does any act with such intention or knowledge and under such circumstances that, if he by that act caused death, he would be guilty of culpable homicide not amounting to murder, shall be punished with imprisonment of either description for a term which may extend to three years, or with fine, or with both; and, if hurt is caused to any person by such act, shall be punished with imprisonment of either description for a term which may extend to seven years, or with fine, or with both. Illustration A, on grave and sudden provocation, fires a pistol at Z, under such circumstances that if he thereby caused death he would be guilty of culpable homicide not amounting to murder. A has com­mitted the offence defined in this section.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#suicide">
+          309 Attempt to commit suicide
+        </a>
+      </div>
+      <div id="suicide" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <strong> Description: </strong>Whoever attempts to commit suicide and does any act towards the commission of such offence, shall be punished with simple imprisonment for a term which may extend to one year or with fine, or with both.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#Kidnapping">
+          363 Kidnapping
+        </a>
+      </div>
+      <div id="Kidnapping" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <strong> Description: </strong>Whoever kidnaps any person from 1[India] or from lawful guardianship, shall be punished with imprisonment of either description for a term which may extend to seven years, and shall also be liable to fine.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#abducting">
+          364 Kidnapping or abducting in order to cause murder
+        </a>
+      </div>
+      <div id="abducting" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <strong> Description: </strong>Whoever kidnaps or abducts any person in order that such person may be murdered or may be so disposed of as to be put in danger of being murdered, shall be punished with imprisonment for life or rigorous imprisonment for a term which may extend to ten years, and shall also be liable to fine.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#ransom">
+          364A Kidnapping for ransom
+        </a>
+      </div>
+      <div id="ransom" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <strong> Description: </strong>Whoever kidnaps or abducts any person or keeps a person in detention after such kidnapping or abduction, and threatens to cause death or hurt to such person, or by his conduct gives rise to a reasonable apprehension that such person may be put to death or hurt, or causes hurt or death to such person in order to compel the Government or any foreign State or international inter-governmental organisation or any other person to do or abstain from doing any act or to pay a ransom, shall be punishable with death or imprisonment for life, and shall also be liable to fine.
+
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#Punishment">
+          376 Punishment of Rape
+        </a>
+      </div>
+      <div id="Punishment" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <strong> Description: </strong>Whoever, except in the cases provided for in sub-section, commits rape, shall be punished with rigorous imprisonment of either description for a term which shall not be less than ten years, but which may extend to imprisonment for life, and shall also be liable to fine.
+A man is said to commit rapebif he penetrates his penis, to any extent, into the vagina, mouth, urethra or anus of a woman or makes her to do so with him or any other person; or
+inserts, to any extent, any object or a part of the body, not being the penis, into the vagina, the urethra or anus of a woman or makes her to do so with him or any other person; or
+manipulates any part of the body of a woman so as to cause penetration into the vagina, urethra, anus or any part of body of such woman or makes her to do so with him or any other person; or
+applies his mouth to the vagina, anus, urethra of a woman or makes her to do so with him or any other person.
+
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#Unnatural">
+          377 Unnatural offences
+        </a>
+      </div>
+      <div id="Unnatural" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <strong> Description: </strong>Whoever voluntarily has carnal intercourse against the order of nature with any man, woman or animal, shall be punished with imprisonment for life, or with imprisonment of either description for a term which may extend to ten years, and shall also be liable to fine.
+
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#theft">
+          379 Punishment for theft
+        </a>
+      </div>
+      <div id="theft" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <strong> Description: </strong>Whoever commits theft shall be punished with imprisonment of either description for a term which may extend to three years, or with fine, or with both.
+
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#extortion">
+          384 Punishment for extortion
+        </a>
+      </div>
+      <div id="extortion" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <strong> Description: </strong>Whoever commits extortion shall be punished with imprisonment of either description for a term which may extend to three years, or with fine, or with both.
+
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#robbery">
+          392 Punishment for robbery
+        </a>
+      </div>
+      <div id="robbery" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <strong> Description: </strong>Whoever commits robbery shall be punished with rigorous imprisonment for a term which may extend to ten years, and shall also be liable to fine; and, if the robbery be committed on the highway between sunset and sunrise, the imprisonment may be extended to fourteen years.
+
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#dacotiy">
+          395 Punishment for dacotiy
+        </a>
+      </div>
+      <div id="dacotiy" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <strong> Description: </strong>Whoever commits dacoity shall be punished with imprisonment for life, or with rigorous imprisonment for a term which may extend to ten years, and shall also be liable to fine.
+
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#mur">
+          396 Murder with dacoity
+        </a>
+      </div>
+      <div id="mur" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <strong> Description: </strong>If any one of five or more persons, who are conjointly committing dacoity, commits murder in so committing dacoity, every one of those persons shall be punished with death, or imprisonment for life, or rigorous imprisonment for a term which may extend to ten years, and shall also be liable to fine.
+
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#ext">
+          383 Extortion
+        </a>
+      </div>
+      <div id="ext" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <strong> Description: </strong>Whoever intentionally puts any person in fear of any injury to that person, or to any other, and thereby dishonestly induces the person so put in fear to deliver to any person any property, or valuable security or anything signed or sealed which may be converted into a valuable security, commits extortion.
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+      
+    </div>
+  </div>
+
+</div>
+
+<div>
+    
+    <% include footer.ejs ;%>
+
+</div>
+    
+</body>
+
+<script>
+    $(document).ready(function(){
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#searchEvents .card").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+</script>
+
+</html>

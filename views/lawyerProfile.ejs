@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Profile</title>
+</head>
+<body>
+
+	<div>
+
+		<% include navbar.ejs ;%>
+
+	<div>
+
+	<div>
+		
+		<div class="container" id="addPlaceForm" style="margin-top: 18vh;">
+		 
+		<form action="/lawyer/profile" method="POST" enctype="multipart/form-data">
+			<div class="form-group">
+				<label for="name">Name:</label>
+			    <input type="text" class="form-control" id="name" name="name" placeholder="Please Enter Name" required>
+			</div>
+			<div class="form-group">
+				<label for="address">Address:</label>
+			    <input type="text" class="form-control" id="address" name="address" placeholder="Please Enter your address" required>
+			</div>
+			<div class="form-group">
+			    <label for="education">Education:</label>
+			    <input type="text" class="form-control" id="education" name="education" placeholder="Please Enter your education" required>    
+			</div>
+			<div class="form-group">
+			    <label for="speciality">Area of Speciality:</label>
+			    <input type="text" class="form-control" id="speciality" name="speciality" placeholder="Please Enter your area of speciality" required>    
+			</div>
+			<div class="row">
+				<div class="form-group row" style="margin-left: 3vh;">
+				    <label for="experience">Experience :</label>
+				    <input type="number" class="form-control" id="experience" name="experience" required>
+				    
+				</div>
+				<div class="form-group row" style="margin-left: 20vh;">
+				    <label for="fees">Fees :</label>
+				    <input type="number" class="form-control" id="fees" name="fees" required>
+				    
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="form-group row" style="margin-left: 3vh;">
+				    <label for="caseFought">Cases Fought :</label>
+				    <input type="number" class="form-control" id="caseFought" name="caseFought" required>
+				    
+				</div>
+				<div class="form-group row" style="margin-left: 20vh;">
+				    <label for="caseWin">Cases Win :</label>
+				    <input type="number" class="form-control" id="caseWin" name="caseWin" required>
+				    
+				</div>
+			</div>
+
+			<div class="form-group">
+			    <label for="description">Description :</label>
+			    <input type="text" class="form-control" id="description" name="description" placeholder="Please Enter desctiption about yourself" required>    
+			</div>
+
+			<div>
+				<label for="lawyerImage">Upload Image of yours</label>
+				<input type="file" class="form-control" name="lawyerImage" id="lawyerImage">
+				<div id="gallery" style="margin-top: 3vh;" >	</div>
+			</div>
+
+			  <button type="submit" class="btn btn-primary" style="margin-top: 4vh;">Submit</button>
+
+		</form>
+
+		<!-- <img src="/uploads/placeOwner/rajan@gmail.com/One_Piece2.png" alt="on" width="100" height="100"> -->
+
+	</div>
+
+	</div>
+
+	<div>
+		
+		<% include footer.ejs ;%>
+
+	</div>
+
+</body>
+
+<script type="text/javascript">
+	function previewImages(){
+	var $preview = $('#gallery').empty();
+	if (this.files){
+		$.each(this.files, readAndPreview);
+	}
+
+	function readAndPreview(i,file){
+		if(!/\.(jpe?g|png|gif)$/i.test(file.name)){
+			return alert(file.name +" is not an image");
+		}
+
+		var reader = new FileReader();
+
+		$(reader).on("load", function(){
+			$preview.append($("<img/>", {src: this.result, height: 100}));
+		});
+
+		reader.readAsDataURL(file);
+	}
+
+}
+
+$('#lawyerImage').on("change", previewImages);
+
+</script>
+
+</html>

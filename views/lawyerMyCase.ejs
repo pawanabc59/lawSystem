@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Notifications</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <style type="text/css">
+    .container{
+      margin-top: 15vh;
+    }
+
+    .card{
+      margin-top: 2vh;
+      margin-bottom: 2vh
+    }
+  </style>
+</head>
+<body>
+
+<div>
+    <% include navbar.ejs ;%>
+</div>
+
+<div class="container">
+  <div id="accordion">
+    <% results1.forEach(function(result){ %>
+      <div class="card">
+        <div class="card-header">
+          <a class="card-link" data-toggle="collapse" href="#<%= result.title %>">
+            <%= result.victimName %> - <%= result.title %>
+          </a>
+        </div>
+        <div id="<%= result.title %>" class="collapse" data-parent="#accordion">
+          <div class="card-body">
+              <div>
+                <p class="row"><strong>Victim's Name : </strong><%= result.victimName %></p>
+                <p class="row"><strong>Victim's Email : </strong><%= result.email %></p>
+                <p class="row"><strong>Case Description : </strong><%= result.description %></p>
+              </div>
+              <!-- <div>
+                <button class="btn btn-success" type="button">Approve</button>
+                <button class="btn btn-danger" type="button">Reject</button>
+              </div> -->
+          </div>
+        </div>
+      </div>
+    <% }); %>
+    
+  </div>
+
+</div>
+
+<div>
+    
+    <% include footer.ejs ;%>
+
+</div>
+    
+</body>
+
+</html>

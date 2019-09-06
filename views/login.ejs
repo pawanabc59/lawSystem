@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+		#loginForm{
+			width: 80vh;
+			height: 556h;
+			margin: auto auto;
+			margin-top: 30vh;
+			border: 1px solid black;
+			padding: 5vh;
+			border-radius: 50px;
+		}
+	</style>
+</head>
+<body>
+
+	<div>
+		<% include navbar.ejs ;%>
+	</div>
+
+	<div id="loginForm">
+		
+		<form action="/login" method="POST">
+			<div class="form-group">
+				<label for="email">Email address:</label>
+			    <input type="email" class="form-control" id="email" name="email" placeholder="Please Enter your Email" required>
+			</div>
+			<div class="form-group">
+			    <label for="password">Password:</label>
+			    <input type="password" class="form-control" id="password" name="password" placeholder="Please Enter your password" required>
+			</div>
+			<div class="row">
+				<div class="radio">
+				  	<label><input type="radio" name="optradio" value="user" checked>User</label>
+				</div>
+				<div class="radio" style="margin-left: 5vh;">
+				  <label><input type="radio" name="optradio" value="lawyer">Lawyer</label>
+				</div>
+			</div>
+			  <button type="submit" class="btn btn-primary">Submit</button>
+
+		</form>
+
+	</div>
+
+</body>
+</html>
