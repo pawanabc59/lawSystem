@@ -5,13 +5,13 @@ function sendMail(name,password,email,role){
   var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'your_email@gmail.com',
-      pass: 'your_email_password'
+      user: 'beit062020@gmail.com',
+      pass: 'itbe06@2020'
     }
   });
 
   var mailOptions = {
-    from: 'Admin <your_email@gmail.com>',
+    from: 'Admin <beit062020@gmail.com>',
     to: email,
     subject: 'Account created as '+role+' from LawSystem',
     text: 'Hey '+name+', Admin here. \nYou have been successfully registered on LawSystem and your password is '+password+'.\n\nThanks and Regards,Admin :)'
@@ -31,13 +31,13 @@ function approvedMail(victimName, victimEmail, lawyerName, casePDF){
   var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'your_email@gmail.com',
-      pass: 'your_email_password'
+      user: 'beit062020@gmail.com',
+      pass: 'itbe06@2020'
     }
   });
 
   var mailOptions = {
-    from: 'Admin <your_email@gmail.com>',
+    from: 'Admin <beit062020@gmail.com>',
     to: victimEmail,
     subject: 'Case Approved by '+lawyerName+'.',
     text: 'Hey '+victimName+', Admin here. \n Your case has been approved by '+lawyerName+'.\nNow '+lawyerName+' will fight your case. \nAll the best for the future.\n\nThanks and Regards,Admin :)',
@@ -62,13 +62,13 @@ function approvedMailLawyer(victimName, victimEmail, lawyerName, lawyerEmail, ca
   var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'your_email@gmail.com',
-      pass: 'your_email_password'
+      user: 'beit062020@gmail.com',
+      pass: 'itbe06@2020'
     }
   });
 
   var mailOptions = {
-    from: 'Admin <your_email@gmail.com>',
+    from: 'Admin <beit062020@gmail.com>',
     to: lawyerEmail,
     subject: 'You Approved case of '+lawyerName+'.',
     text: 'Hey '+lawyerName+', Admin here. \n You have approved the case of '+victimName+'\nNow you will fight the case of '+victimName+'. \nAll the best for the future.\n\nThanks and Regards,Admin :)',
@@ -88,21 +88,21 @@ function approvedMailLawyer(victimName, victimEmail, lawyerName, lawyerEmail, ca
   });
 }
 
-function rejectedMail(victimName, victimEmail, lawyerName){
+function rejectedMail(victimName, victimEmail, lawyerName, reasonForRejection){
 
   var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'your_email@gmail.com',
-      pass: 'your_email_password'
+      user: 'beit062020@gmail.com',
+      pass: 'itbe06@2020'
     }
   });
 
   var mailOptions = {
-    from: 'Admin <your_email@gmail.com>',
+    from: 'Admin <beit062020@gmail.com>',
     to: victimEmail,
     subject: 'Case Rejected by '+lawyerName+'.',
-    text: 'Hey '+victimName+', Admin here. \n Your case has been Rejected by '+lawyerName+'.\n Please find some other lawyer. \nAll the best for the future.\n\nThanks and Regards,Admin :)',
+    text: 'Hey '+victimName+', Admin here. \n Your case has been Rejected by '+lawyerName+'.\n Please find some other lawyer.\n Reason For Rejection : \n '+reasonForRejection+' \n\nAll the best for the future.\n\nThanks and Regards,Admin :)',
   };
 
   transporter.sendMail(mailOptions, function(error, info){

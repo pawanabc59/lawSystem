@@ -198,6 +198,7 @@ router.post('/rejected', function(req,res){
 
 	var victimEmail = req.body.emailRej;
 	var victimName = req.body.nameRej;
+	var reasonForRejection = req.body.reasonForRejection;
 	var sql = "select * from lawyerProfile where email = '"+req.session.email+"'";
 	con.query(sql, function(err, results){
 		if (err) throw err;
@@ -206,7 +207,7 @@ router.post('/rejected', function(req,res){
 			var lawyerName = result.name;
 			database.isRejected( id, victimEmail, function(err, results1){
 				if (err) throw err;
-				mail.rejectedMail(victimName, victimEmail, lawyerName);
+				mail.rejectedMail(victimName, victimEmail, lawyerName, reasonForRejection);
 				res.redirect("/lawyer/notification");
 			});
 
